@@ -1,1 +1,0 @@
-/home/jeb47/.config/nvim/lua
