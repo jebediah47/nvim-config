@@ -1,7 +1,7 @@
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
-set mouse=v                 " middle-click paste with 
+set mouse+=a                " middle-click paste with 
 set hlsearch                " highlight search 
 set incsearch               " incremental search
 set tabstop=2               " number of columns occupied by a tab 
@@ -10,7 +10,7 @@ set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
-filetype plugin indent on   "allow auto-indenting depending on file type
+filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -45,6 +45,9 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
+" Nvim file bar
+Plug 'romgrk/barbar.nvim'
+
 " Nvim telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -67,6 +70,11 @@ colorscheme tokyonight
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
+" nvim-tree keymaps
+nnoremap <leader>ft <cmd>NvimTreeToggle<cr>
+nnoremap <leader>fc <cmd>NvimTreeCollapse<cr>
+nnoremap <leader>nt <cmd>NvimTreeFocus<cr>
+
 " LSP server and autocomple configuration
 source ~/.config/nvim/lua/lsp.lua
 
@@ -76,3 +84,5 @@ source ~/.config/nvim/lua/nvimtree.lua
 " Treesitter syntax highlighting config
 source ~/.config/nvim/lua/treesitter.lua
 
+" Barbar config and keymaps
+source ~/.config/nvim/lua/bar.lua
